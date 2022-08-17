@@ -2,4 +2,4 @@
 RaspberryPi education in TUKorea
 
 
-Tech University of Korea Mechatronics Engineering Raspberry Pi Comparative Program Code repository.
+Tech University of Korea Department of Mechatronics Engineering Raspberry Pi Comparative Program Code repository.
