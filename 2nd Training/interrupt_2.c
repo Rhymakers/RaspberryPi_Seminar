@@ -7,11 +7,14 @@
 #define BTN_PIN 13
 
 void on_off(int flag) {
+	//controls red & yellow LED
 	digitalWrite(RED_LED, flag);
 	digitalWrite(YELLOW_LED, !flag);
 }
 
 void btn_interrupt() {
+	//interrupt function
+	//turns on green LED
 	printf("%s\n","Interrupt start");
 	digitalWrite(GREEN_LED, HIGH);
 	delay(4000);
@@ -21,9 +24,14 @@ void btn_interrupt() {
 
 
 int main() {
+	/*
+	Example code for interrupt function of Raspberry Pi
+	turns on green LED when there's input in interrupt pin
+	*/
 	int flag = 0;
 	
 	wiringPiSetupGpio();
+	//uses broadcom pinmap
 	
 	pinMode(RED_LED, OUTPUT);
 	pinMode(YELLOW_LED, OUTPUT);

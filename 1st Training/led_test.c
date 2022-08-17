@@ -12,7 +12,8 @@ int main() {
 	if(wiringPiSetup() == -1) {
 		return -1;
 	}		
-	// initializing wiringPi for GPIO control
+	//initializing wiringPi for GPIO control
+	//uses wiringpi pinmap
 
 	pinMode(LED, OUTPUT); //set "LED" pin as OUTPUT
 	pinMode(SWITCH, INPUT); //set "SWITCH" pin as INPUT
