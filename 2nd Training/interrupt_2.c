@@ -6,14 +6,12 @@
 #define GREEN_LED 25
 #define BTN_PIN 13
 
-void on_off(int flag)
-{
+void on_off(int flag) {
 	digitalWrite(RED_LED, flag);
 	digitalWrite(YELLOW_LED, !flag);
 }
 
-void btn_interrupt()
-{
+void btn_interrupt() {
 	printf("%s\n","Interrupt start");
 	digitalWrite(GREEN_LED, HIGH);
 	delay(4000);
@@ -22,8 +20,7 @@ void btn_interrupt()
 }
 
 
-int main()
-{
+int main() {
 	int flag = 0;
 	
 	wiringPiSetupGpio();
@@ -32,17 +29,17 @@ int main()
 	pinMode(YELLOW_LED, OUTPUT);
 	pinMode(GREEN_LED, OUTPUT);
 	
-	if(wiringPiISR(BTN_PIN,INT_EDGE_FALLING, &btn_interrupt)<0)
-	{
+	if(wiringPiISR(BTN_PIN,INT_EDGE_FALLING, &btn_interrupt)<0) {
 		printf("%s\n","Interrupt setup fail");
 	}
-	for(;;)
-	{
+
+	for(;;) {
 		on_off(flag);
 		printf("%s\n","execute loop");
 		delay(1000);
 		flag = !flag;
 	}
+	
 	return 0;
 }
 
