@@ -11,6 +11,6 @@ $ cd RaspberryPi_Seminar
 
 Compile each code with gcc to get executable binary
 ```bash
-$ gcc -o <your_preferred_executable_name> <example_code_name>.c -lwiringPi
+$ gcc -o <your_preferred_executable_name> <example_code_name>.c -lwiringPi -lpthread
 $ ./<your_preferred_executable_name>
 ```
