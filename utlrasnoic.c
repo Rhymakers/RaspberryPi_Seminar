@@ -14,7 +14,7 @@ int main()
 		return 1;
 		
 	pinMode(trigPin, OUTPUT);
-	pinMode(echoPin, OUTPUT);
+	pinMode(echoPin, INPUT);
 	printf("ultra: \n");
 	
 	while(1)
