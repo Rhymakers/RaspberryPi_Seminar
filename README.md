@@ -8,9 +8,8 @@ Tech University of Korea Department of Mechatronics Engineering Raspberry Pi Com
 Get example codes by cloning this repository
 ```bash
 $ cd ~
-$ mkdir rpi_ws
-$ cd rpi_ws
 $ git clone https://github.com/Rhymakers/RaspberryPi_Seminar.git
+$ cd RaspberryPi_Seminar
 ```
 
 Compile each code with gcc to get executable binary
