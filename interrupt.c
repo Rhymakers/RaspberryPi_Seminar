@@ -5,12 +5,11 @@
 #define INTERRUPT_GPIO 23
 #define LED 24
 
-
 void twinkle(void)
 {
- static int i = 0; // static으로 선언하지 않아도 됩니다. 작성자는 twinkle함수가 자주 호출되기 때문에 static으로 선언하였습니다.
+    static int i = 0; // static으로 선언하지 않아도 됩니다. 작성자는 twinkle함수가 자주 호출되기 때문에 static으로 선언하였습니다.
 
- printf("interrupt on !!\n");
+    printf("interrupt on !!\n");
  
  for (i = 0, digitalWrite(LED, 0); i < 5; i++)
  {
