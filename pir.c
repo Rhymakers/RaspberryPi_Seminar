@@ -13,7 +13,7 @@ int main() {
     pinMode(PIRpin, INPUT);
 
     for (;;) {
-        //PIR sensor omits result as 1 (HIGH) & 0 (LOW)
+        //PIR sensor returns result as 1 (HIGH) & 0 (LOW)
         if (digitalRead(PIRpin) == HIGH) {
             printf("Detected\n");
 
