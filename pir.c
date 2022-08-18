@@ -17,12 +17,12 @@ int main() {
         if (digitalRead(PIRpin) == HIGH) {
             printf("Detected\n");
 
-            delay(60);
+            delay(30000);
         }
         else if (digitalRead(PIRpin) == LOW) {
             printf("Not Detected\n");
 
-            delay(60);
+            delay(30000);
         }
         else {
             printf("Error\n");
