@@ -13,6 +13,11 @@ void read_data() {
     uint8_t counter = 0;
     uint8_t i;
 
+    for (i = 0; i < 5; i++) {
+        //resetting data
+        data[i] = 0;
+    }
+
     pinMode(DHT_Pin, OUTPUT);
     digitalWrite(DHT_Pin, LOW);
     delay(18);
