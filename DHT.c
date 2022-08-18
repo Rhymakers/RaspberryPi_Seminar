@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <wiringPi.h>
+#include <stdint.h>
 
 #define DHT_Pin 8
 
 int data[5] = {0,};
 
 void read_data() {
-    int state = 1;
-    int j = 0;
-    int counter = 0;
-    int i;
+    uint8_t state = 1;
+    uint8_t j = 0;
+    uint8_t counter = 0;
+    uint8_t i;
 
     pinMode(DHT_Pin, OUTPUT);
     digitalWrite(DHT_Pin, LOW);
@@ -19,21 +20,26 @@ void read_data() {
     pinMode(DHT_Pin, INPUT);
 
     for (i = 0; i < 85; i++) {
+        counter = 0; //initial counter variable
+
         while (digitalRead(DHT_Pin) == state) {
+            //increase counter while pin reading is same with predefined state
             counter++;
             delayMicroseconds(1);
             if (counter == 255) {
+                //waited for too long, exit
                 break;
             }
         }
 
-        state = digitalRead(DHT_Pin);
+        state = digitalRead(DHT_Pin); //save current DHT pin state
 
         if (counter == 255) {
             break;
         }
 
         if ((i >= 4) && (i % 2 == 0)) {
+            //get data after first 4 bits && even bits
             data[j / 8] <<= 1;
             if (counter > 16) {
                 data[j / 8] |= 1;
