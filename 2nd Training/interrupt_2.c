@@ -40,6 +40,7 @@ int main() {
 	pinMode(YELLOW_LED, OUTPUT);
 	pinMode(GREEN_LED, OUTPUT);
 	
+	/** 인터럽트 상황을 감시하고 발생시 지정된 핸들러(인터럽트함수,btn_interrupt)를 실행시킴*/
 	if(wiringPiISR(BTN_PIN,INT_EDGE_FALLING, &btn_interrupt)<0) {
 		printf("%s\n","Interrupt setup fail");
 	}
@@ -53,5 +54,3 @@ int main() {
 	
 	return 0;
 }
-
-
